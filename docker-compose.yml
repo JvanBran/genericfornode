@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  node1:
+    container_name: node1
+    working_dir: /app/node/
+    image: node:14.0.0-alpine
+    command: yarn dev
+    ports:
+      - 8001:3000
+    volumes:
+      - /Users/jvan/Documents/Work/Wanwoo/collateral_for_mysql/:/app/node/
+    network_mode: "bridge"
+    restart: always
+
+  node2:
+    container_name: node2
+    working_dir: /app/node/
+    image: node:14.0.0-alpine
+    command: yarn dev
+    ports:
+      - 8002:3000
+    volumes:
+      - /Users/jvan/Documents/Work/Wanwoo/collateral_for_mysql/:/app/node/
+    network_mode: "bridge"
+    restart: always
+
+  node3:
+    container_name: node3
+    working_dir: /app/node/
+    image: node:14.0.0-alpine
+    command: yarn dev
+    ports:
+      - 8003:3000
+    volumes:
+      - /Users/jvan/Documents/Work/Wanwoo/collateral_for_mysql/:/app/node/
+    network_mode: "bridge"
+    restart: always
